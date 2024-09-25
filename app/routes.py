@@ -7,4 +7,18 @@ def index():
     user = {
         'username': 'Sonni'
     }
-    return render_template('index.html', title='Home', user=user)
+
+    products = [
+        {
+            'author': {'username': 'Sarah'},
+            'sku': '123TEST',
+            'description': '1 GAL SEALER'
+        },
+        {
+            'author': {'username': 'Kelly'},
+            'sku': 'ANOTHER1TEST',
+            'description': '1 GAL PAINT'
+        }
+    ]
+
+    return render_template('index.html', title='Home', user=user, products=products)

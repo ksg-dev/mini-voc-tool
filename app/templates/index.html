@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %} {{ title }} - VOC Tool{% endblock %}
+{% block title %}
+	{% if title %}
+		{{ title }} - VOC Tool
+	{% else %}
+		Welcome - VOC Tool
+	{% endif %}
+{% endblock %}
 
 {% block content %}
 	<h1>Hello, {{ user.username }}</h1>
+
+	{% for item in products %}
+	<div>
+		<p>
+			{{ item.author.username }} updated SKU: <b>{{ item.sku }}</b>    {{ item.description }}
+		</p>
+	</div>
+	{% endfor %}
 {% endblock %}
